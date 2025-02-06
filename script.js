@@ -4,7 +4,7 @@ function calculateGames() {
     let mmrPerGame = parseInt(document.getElementById("mmrPerGame").value);
 
     // Verifica che il rank desiderato e il rank attuale non sia vuoto
-    if (currentRank == 0 || desiredRank == 0){
+    if (currentRank == 0 || desiredRank == 0) {
         document.getElementById("gamesResult").innerHTML = "Error: invalid data.";
         return;
     }
@@ -13,12 +13,17 @@ function calculateGames() {
     if (desiredRank <= currentRank) {
         document.getElementById("gamesResult").innerHTML = "Error: the desired rank must be higher than the actual rank.";
         return;
-    } else {
-        document.getElementById("gamesResult").innerHTML = null;
+    }
+
+    // Verifica che mmrPerGame sia un numero valido e maggiore di 0
+    if ((isNaN(mmrPerGame) || mmrPerGame <= 0) || 100 < mmrPerGame) {
+        document.getElementById("gamesResult").innerHTML = "Error: MMR per game invalid number.";
+        return;
     }
 
     // Calcoliamo la differenza di MMR tra il rank attuale e il rank desiderato
     let mmrDifference = desiredRank - currentRank;
+
 
     // Calcoliamo il numero di partite necessarie e arrotondiamo per eccesso
     let gamesRequired = Math.ceil(mmrDifference / mmrPerGame);
