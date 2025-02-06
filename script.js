@@ -40,7 +40,7 @@ function calculateGames() {
     document.getElementById("priceResult").innerHTML = `Price: € ${price}`;
 }
 
-function clear() {
+function clearForm() {
     // Resetta i risultati visualizzati
     document.getElementById("gamesResult").innerHTML = null;
     document.getElementById("priceResult").innerHTML = null;
