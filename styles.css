@@ -78,13 +78,26 @@ button {
     width: 100%;
 }
 
-button:hover {
+#calculateButton:hover {
     background-color: rgb(255, 87, 252);
 }
 
 h3 {
     font-size: 1.8rem;
     font-family: "Cinzel", serif; /* Aggiunto il font "Cinzel" per gli h3 */
+}
+
+#clearButton{
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(249, 255, 87);
+    color: rgb(249, 255, 87);
+    box-shadow: 0px 0px 10px rgb(249, 255, 87);
+}
+
+#clearButton:hover{
+    background-color: rgb(249, 255, 87);
+    color: rgb(0, 0, 0);
+    box-shadow: none;
 }
 
 @media (max-width: 768px) {
