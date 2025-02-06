@@ -39,3 +39,18 @@ function calculateGames() {
     document.getElementById("gamesResult").innerHTML = `Total games: ${gamesRequired}`;
     document.getElementById("priceResult").innerHTML = `Price: € ${price}`;
 }
+
+function clear() {
+    // Resetta i risultati visualizzati
+    document.getElementById("gamesResult").innerHTML = null;
+    document.getElementById("priceResult").innerHTML = null;
+
+    // Resetta il valore della select "currentRank"
+    document.getElementById("currentRank").selectedIndex = 0;
+
+    // Resetta il valore della select "desiredRank"
+    document.getElementById("desiredRank").selectedIndex = 0;
+
+    // Resetta il valore dell'input "mmrPerGame"
+    document.getElementById("mmrPerGame").value = "";
+}
