@@ -1,0 +1,122 @@
+body {
+    font-family: "Cinzel", serif; /* Cambiato il font principale in "Cinzel" */
+    text-align: center;
+    background: linear-gradient(120deg, rgb(50, 39, 0) 10%, rgb(101, 22, 100) 100%);
+    background-attachment: fixed;
+    min-height: 100%;
+    color: white;
+    padding: 10px;
+    margin: 0;
+}
+
+h2 {
+    font-family: "Honk", system-ui; /* Manteniamo "Honk" per il titolo */
+    font-size: 7vw;
+    color: #ebd5ff;
+    margin: 20px 0;
+}
+
+form {
+    background: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgb(255, 87, 252);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+input, select {
+    display: block;
+    margin: 10px auto;
+    margin-top: 20px;
+    padding: 10px;
+    width: 90%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0px;    
+    background-color: #000000;
+    color: white;
+    box-shadow: 0px 1px 0px 0px rgb(249, 255, 87);
+    font-family: "Cinzel", serif; /* Aggiunto il font "Cinzel" per input e select */
+}
+
+#firstOption {
+    color: #ffffff5d;
+}
+
+#mmrPerGame {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 90%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0px;
+    color: white;
+    text-decoration: none;
+    font-family: "Cinzel", serif; /* Aggiunto il font "Cinzel" per l'input MMR */
+}
+
+button {
+    font-family: "Cinzel", serif; /* Manteniamo "Cinzel" per il pulsante */
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: rgb(249, 255, 87);
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: rgb(255, 87, 252);
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-family: "Cinzel", serif; /* Aggiunto il font "Cinzel" per gli h3 */
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 15vw;
+    }
+
+    form {
+        width: 95%;
+        padding: 15px;
+    }
+
+    input, select {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 10px;
+    }
+
+    button {
+        margin-bottom: 20px;
+    }
+}
