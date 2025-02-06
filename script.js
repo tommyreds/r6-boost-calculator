@@ -3,21 +3,25 @@ function calculateGames() {
     let desiredRank = parseInt(document.getElementById("desiredRank").value);
     let mmrPerGame = parseInt(document.getElementById("mmrPerGame").value);
 
+
     // Verifica che il rank desiderato e il rank attuale non sia vuoto
     if (currentRank == 0 || desiredRank == 0) {
         document.getElementById("gamesResult").innerHTML = "Error: invalid data.";
+        document.getElementById("priceResult").innerHTML = null;
         return;
     }
 
     // Verifica che il rank desiderato non sia inferiore al rank attuale
     if (desiredRank <= currentRank) {
         document.getElementById("gamesResult").innerHTML = "Error: the desired rank must be higher than the actual rank.";
+        document.getElementById("priceResult").innerHTML = null;
         return;
     }
 
     // Verifica che mmrPerGame sia un numero valido e maggiore di 0
-    if ((isNaN(mmrPerGame) || mmrPerGame <= 0) || 100 < mmrPerGame) {
+    if ((isNaN(mmrPerGame) || mmrPerGame <= 0) || 120 < mmrPerGame) {
         document.getElementById("gamesResult").innerHTML = "Error: MMR per game invalid number.";
+        document.getElementById("priceResult").innerHTML = null;
         return;
     }
 
