@@ -1,4 +1,23 @@
-function calculateGames() {
+// funzione per gestire 'l'apertura' della card
+document.getElementById('card').addEventListener('click', function(event) {
+    event.stopPropagation();
+    if (!this.classList.contains('card-active')) {
+        this.classList.add('card-active');
+        this.classList.add('preCardText-disable');
+    }
+});
+
+// funzione per gestire il bottone 'x' di chiusura
+document.getElementById('closeBtn').addEventListener('click', function(event) {
+    event.stopPropagation();
+    document.getElementById('card').classList.remove('card-active');
+});
+
+// event listener per i bottoni
+document.getElementById('calculateBtn').addEventListener('click', calculate);
+document.getElementById('cancelBtn').addEventListener('click', clearAll);
+
+function calculate() {
     let currentRank = parseInt(document.getElementById("currentRank").value);
     let desiredRank = parseInt(document.getElementById("desiredRank").value);
     let mmrPerGame = parseInt(document.getElementById("mmrPerGame").value);
@@ -40,7 +59,7 @@ function calculateGames() {
     document.getElementById("priceResult").innerHTML = `Price: € ${price}`;
 }
 
-function clearForm() {
+function clearAll() {
     // Resetta i risultati visualizzati
     document.getElementById("gamesResult").innerHTML = null;
     document.getElementById("priceResult").innerHTML = null;
