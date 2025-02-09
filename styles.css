@@ -1,135 +1,219 @@
+/*TODO
+1.Adattarlo agli schermi più piccoli
+2.Riposizionare i resluts
+*/
+
 body {
-    font-family: "Cinzel", serif; /* Cambiato il font principale in "Cinzel" */
-    text-align: center;
-    background: linear-gradient(120deg, rgb(50, 39, 0) 10%, rgb(101, 22, 100) 100%);
-    background-attachment: fixed;
-    min-height: 100%;
-    color: white;
-    padding: 10px;
     margin: 0;
+    background-attachment: fixed;   
 }
 
-h2 {
-    font-family: "Honk", system-ui; /* Manteniamo "Honk" per il titolo */
-    font-size: 7vw;
-    color: #ebd5ff;
-    margin: 20px 0;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(bigchamp.png);
+    background-color: #1c1c1c;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    height: 100vh;
+    width: 100%;
+    animation: changeColor 15s infinite alternate;
 }
 
-form {
-    background: #000000;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 400px;
-    margin: auto;
-    box-shadow: 0px 0px 10px rgb(255, 87, 252);
-    font-size: 1rem;
-    font-style: italic;
+@keyframes changeColor {
+    from {filter: hue-rotate(360deg);}
+    to {filter: hue-rotate(0deg);}
 }
 
-input, select {
-    display: block;
-    margin: 10px auto;
-    margin-top: 20px;
-    padding: 10px;
-    width: 90%;
-    font-size: 1rem;
+/*  ChatGpt - Overlay scuro sull'immagine di sfondo (basterebbe cambiare il colore dello sfondo)    */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(37, 37, 37, 0.5)); /* Overlay scuro */
+}
+
+.preCardText {
+    position: fixed;
+    color: #ffffffab;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 800px;
+}
+
+.preCardText-disable .preCardText{
+    opacity: 0;
+}
+
+.card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    border-radius: 10%;
+    border: 1px solid rgba(255, 255, 255, 0.202);
+    box-shadow: 0px 5px 32px rgba(255, 255, 255, 0.202);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    width: 300px;
+    height: 400px;
+    padding: 5px;
+    
+
+    cursor: pointer;
+    
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-active {
+    width: 440px;
+    height: 580px;
+    
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+
+    cursor: auto;
+}
+
+.cardSelection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    gap: 10px;
+}
+
+.cardButtons {
+    position: absolute;
+    bottom: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 35px;
+    color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+.card-active .close-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+select, input, button {
+    background-color: transparent;
     border: none;
-    border-radius: 0px;    
-    background-color: #000000;
-    color: white;
-    box-shadow: 0px 1px 0px 0px rgb(249, 255, 87);
-    font-family: "Cinzel", serif; /* Aggiunto il font "Cinzel" per input e select */
+    border-radius: 4px;
+    margin: 15px;
+    padding: 3px;
+    width: 180px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 
-#firstOption {
-    color: #ffffff5d;
-}
-
-#mmrPerGame {
-    display: block;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    padding: 10px;
-    width: 90%;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0px;
-    color: white;
-    text-decoration: none;
-    font-family: "Cinzel", serif; /* Aggiunto il font "Cinzel" per l'input MMR */
+.card-active select,
+.card-active input,
+.card-active button {
+    opacity: 1;
+    visibility: visible;
+    color: #ffffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    pointer-events: all;
 }
 
 button {
-    font-family: "Cinzel", serif; /* Manteniamo "Cinzel" per il pulsante */
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: rgb(249, 255, 87);
-    color: rgb(0, 0, 0);
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding: 10px 20px;
-    border: none;
+    margin: 15px;
+    padding: 5px;
+    font-weight: 700;
     cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
 }
 
-#calculateButton:hover {
-    background-color: rgb(255, 87, 252);
+.card-active button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 2px 7px 20px rgba(255, 255, 255, 0.4);
 }
 
-h3 {
-    font-size: 1.8rem;
-    font-family: "Cinzel", serif; /* Aggiunto il font "Cinzel" per gli h3 */
+input::placeholder {
+    color: transparent;
+    transition: color 0.3s ease;
 }
 
-#clearButton{
-    background-color: rgb(0, 0, 0);
-    border: 1px solid rgb(249, 255, 87);
-    color: rgb(249, 255, 87);
-    box-shadow: 0px 0px 10px rgb(249, 255, 87);
+.card-active input::placeholder {
+    color: #ffffff;
 }
 
-#clearButton:hover{
-    background-color: rgb(249, 255, 87);
-    color: rgb(0, 0, 0);
-    box-shadow: none;
+option {
+    color: rgba(0, 0, 0, 0.518);
 }
 
-@media (max-width: 768px) {
-    h2 {
-        font-size: 15vw;
-    }
-
-    form {
-        width: 95%;
-        padding: 15px;
-    }
-
-    input, select {
-        font-size: 0.9rem;
-    }
-
-    button {
-        font-size: 1rem;
-        width: 100%;
-    }
-
-    h3 {
-        font-size: 2rem;
-    }
+.cardTitle {
+    position: relative;
+    top: 10px;
+    
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    font-weight: 800px;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease 0.5s;
 }
 
-@media (max-width: 480px) {
-    form {
-        padding: 10px;
-    }
+.card-active .cardTitle {
+    opacity: 1;
+    visibility: visible;
+    color: #ffffff;
+}
 
-    button {
-        margin-bottom: 20px;
-    }
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: transparent;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    padding: 0px;
+    transition: color 0.3s ease;
+}
+
+.card-active .results {
+    color: #ffffff;
+}
+
+.results p {
+    font-size: 18px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.card-active .results p {
+    opacity: 1;
+    visibility: visible;
 }
