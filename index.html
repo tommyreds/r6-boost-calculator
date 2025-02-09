@@ -1,98 +1,125 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boost Calculator</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Honk&display=swap');
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    
+    <title>Glass Card</title>
 </head>
 <body>
-    <h2>Rosse Boost Calculator</h2>
-    <form id="boostCalculator">
-        <label for="currentRank"></label>
-        <select id="currentRank">
-            <option id="firstOption" value="0">Actual Rank</option>
-            <option value="1000">Copper 5</option>
-            <option value="1100">Copper 4</option>
-            <option value="1200">Copper 3</option>
-            <option value="1300">Copper 2</option>
-            <option value="1400">Copper 1</option>
-            <option value="1500">Bronze 5</option>
-            <option value="1600">Bronze 4</option>
-            <option value="1700">Bronze 3</option>
-            <option value="1800">Bronze 2</option>
-            <option value="1900">Bronze 1</option>
-            <option value="2000">Silver 5</option>
-            <option value="2100">Silver 4</option>
-            <option value="2200">Silver 3</option>
-            <option value="2300">Silver 2</option>
-            <option value="2400">Silver 1</option>
-            <option value="2500">Gold 5</option>
-            <option value="2600">Gold 4</option>
-            <option value="2700">Gold 3</option>
-            <option value="2800">Gold 2</option>
-            <option value="2900">Gold 1</option>
-            <option value="3000">Platinum 5</option>
-            <option value="3100">Platinum 4</option>
-            <option value="3200">Platinum 3</option>
-            <option value="3300">Platinum 2</option>
-            <option value="3400">Platinum 1</option>
-            <option value="3500">Diamond 5</option>
-            <option value="3600">Diamond 4</option>
-            <option value="3700">Diamond 3</option>
-            <option value="3800">Diamond 2</option>
-            <option value="3900">Diamond 1</option>
-            <option value="4000">Champion</option>
-        </select>
+    <div class="container">
+        <div id="preCardText" class="preCardText">
+            <h1>Tap Here</h1>
+        </div>
+        <div class="card" id="card" type="buttton">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <div id="cardTitle" class="cardTitle">
+                <h2>Boost Calculator</h2>
+            </div>
+            <div class="cardSelection">
+                <select name="currentRank" id="currentRank">
+                    <option id="firstOption" value="0">Actual Rank</option>
+                    <option value="1000">Copper 5</option>
+                    <option value="1100">Copper 4</option>
+                    <option value="1200">Copper 3</option>
+                    <option value="1300">Copper 2</option>
+                    <option value="1400">Copper 1</option>
+                    <option value="1500">Bronze 5</option>
+                    <option value="1600">Bronze 4</option>
+                    <option value="1700">Bronze 3</option>
+                    <option value="1800">Bronze 2</option>
+                    <option value="1900">Bronze 1</option>
+                    <option value="2000">Silver 5</option>
+                    <option value="2100">Silver 4</option>
+                    <option value="2200">Silver 3</option>
+                    <option value="2300">Silver 2</option>
+                    <option value="2400">Silver 1</option>
+                    <option value="2500">Gold 5</option>
+                    <option value="2600">Gold 4</option>
+                    <option value="2700">Gold 3</option>
+                    <option value="2800">Gold 2</option>
+                    <option value="2900">Gold 1</option>
+                    <option value="3000">Platinum 5</option>
+                    <option value="3100">Platinum 4</option>
+                    <option value="3200">Platinum 3</option>
+                    <option value="3300">Platinum 2</option>
+                    <option value="3400">Platinum 1</option>
+                    <option value="3500">Emerald 5</option>
+                    <option value="3600">Emerald 4</option>
+                    <option value="3700">Emerald 3</option>
+                    <option value="3800">Emerald 2</option>
+                    <option value="3900">Emerald 1</option>
+                    <option value="400">Diamond 5</option>
+                    <option value="4100">Diamond 4</option>
+                    <option value="4200">Diamond 3</option>
+                    <option value="4300">Diamond 2</option>
+                    <option value="4400">Diamond 1</option>
+                    <option value="4500">Champion</option>
+                </select>
+    
+                <select name="desiredRank" id="desiredRank">
+                    <option id="firstOption" value="0">Desired Rank</option>
+                    <option value="1000">Copper 5</option>
+                    <option value="1100">Copper 4</option>
+                    <option value="1200">Copper 3</option>
+                    <option value="1300">Copper 2</option>
+                    <option value="1400">Copper 1</option>
+                    <option value="1500">Bronze 5</option>
+                    <option value="1600">Bronze 4</option>
+                    <option value="1700">Bronze 3</option>
+                    <option value="1800">Bronze 2</option>
+                    <option value="1900">Bronze 1</option>
+                    <option value="2000">Silver 5</option>
+                    <option value="2100">Silver 4</option>
+                    <option value="2200">Silver 3</option>
+                    <option value="2300">Silver 2</option>
+                    <option value="2400">Silver 1</option>
+                    <option value="2500">Gold 5</option>
+                    <option value="2600">Gold 4</option>
+                    <option value="2700">Gold 3</option>
+                    <option value="2800">Gold 2</option>
+                    <option value="2900">Gold 1</option>
+                    <option value="3000">Platinum 5</option>
+                    <option value="3100">Platinum 4</option>
+                    <option value="3200">Platinum 3</option>
+                    <option value="3300">Platinum 2</option>
+                    <option value="3400">Platinum 1</option>
+                    <option value="3500">Emerald 5</option>
+                    <option value="3600">Emerald 4</option>
+                    <option value="3700">Emerald 3</option>
+                    <option value="3800">Emerald 2</option>
+                    <option value="3900">Emerald 1</option>
+                    <option value="400">Diamond 5</option>
+                    <option value="4100">Diamond 4</option>
+                    <option value="4200">Diamond 3</option>
+                    <option value="4300">Diamond 2</option>
+                    <option value="4400">Diamond 1</option>
+                    <option value="4500">Champion</option>
+                </select>
 
-        <label for="desiredRank"></label>
-        <select id="desiredRank">
-            <option id="firstOption" value="0">Desired Rank</option>
-            <option value="1000">Copper 5</option>
-            <option value="1100">Copper 4</option>
-            <option value="1200">Copper 3</option>
-            <option value="1300">Copper 2</option>
-            <option value="1400">Copper 1</option>
-            <option value="1500">Bronze 5</option>
-            <option value="1600">Bronze 4</option>
-            <option value="1700">Bronze 3</option>
-            <option value="1800">Bronze 2</option>
-            <option value="1900">Bronze 1</option>
-            <option value="2000">Silver 5</option>
-            <option value="2100">Silver 4</option>
-            <option value="2200">Silver 3</option>
-            <option value="2300">Silver 2</option>
-            <option value="2400">Silver 1</option>
-            <option value="2500">Gold 5</option>
-            <option value="2600">Gold 4</option>
-            <option value="2700">Gold 3</option>
-            <option value="2800">Gold 2</option>
-            <option value="2900">Gold 1</option>
-            <option value="3000">Platinum 5</option>
-            <option value="3100">Platinum 4</option>
-            <option value="3200">Platinum 3</option>
-            <option value="3300">Platinum 2</option>
-            <option value="3400">Platinum 1</option>
-            <option value="3500">Diamond 5</option>
-            <option value="3600">Diamond 4</option>
-            <option value="3700">Diamond 3</option>
-            <option value="3800">Diamond 2</option>
-            <option value="3900">Diamond 1</option>
-            <option value="4000">Champion</option>
-        </select>
+                <input id="mmrPerGame" type="number" min="1" max="120" placeholder="Elo x Win (1-120)">
 
-        <label for="mmrPerGame"></label>
-        <input placeholder="Elo per game (1-120)" type="number" id="mmrPerGame" min="1" max="100">
+            </div>
+            
+            <div class="results">
+                <p id="gamesResult"></p>
+                <p id="priceResult"></p>
+            </div>
 
-        <button type="button" id="calculateButton" onclick="calculateGames()">Calculate</button>
-        <button type="button" id="clearButton" onclick="clearForm()">Cancel</button>
-    </form>
+            <div class="cardButtons">
+                <button id="calculateBtn" type="button">CALCULATE</button>
+                <button id="cancelBtn" type="button">CANCEL</button>
+            </div>
 
-    <h3 id="gamesResult"></h3>
-    <h3 id="priceResult"></h3>
+            
+
+        </div>
+    </div>
+    
 
     <script src="script.js"></script>
 </body>
